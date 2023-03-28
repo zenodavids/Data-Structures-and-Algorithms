@@ -48,13 +48,13 @@ for (i = 0; i < n; i++) {
 }
 ```
 
-For the scenario above, the code been iterated by the for loops are the reason for the n x n (two for loops). hence the time function is **f(n^2) = n. which is O(n^2)**
+For the scenario above, the code been iterated by the for loops are the reason for the n x n (two for loops). hence the time function is **f(n^2) = n. which is O(n<sup>2</sup>)**
 
 ### Scenario 3:
 
 Here, we have a _Nested_ **for loop**
 
-like we said in scenario 1, we dont bother with the for loop itself but the code it iterates
+like we said in scenario 1, we don't bother with the for loop itself but the code it iterates
 
 ```js
 for (i = 0; i < n; i++) {
@@ -79,7 +79,7 @@ for (i = 1; p < = n; i++) {
 }
 ```
 
-Here, the default for loop unit of time (n + 1) doesnt work here because the condition in the loop states that as long as p is less than or equals n (p < = n), not i. The loop stops once "p" is greater than "n". Since the loop stops in "k"(when p is greater than n), then we assume ;
+Here, the default for loop unit of time (n + 1) doesn't work here because the condition in the loop states that as long as p is less than or equals n (p < = n), not i. The loop stops once "p" is greater than "n". Since the loop stops in "k"(when p is greater than n), then we assume ;
 **p = k(k + 1)/2**. which means the loop stops when **k(k + 1)/2 > n**.
 time unit is **k x k / 2** simplified to k^2 >n. hence "k > root of n ". which is still called **O(root of n)**
 
@@ -102,13 +102,13 @@ i = 1 * 2 * 2 * 2 ... k = n
 ```
 
 the above means that the loop keeps going on till it gets to k (we assume "k" to be when the "i" is less than "n" and the loop stops).
-since it deals with the multiplication of 2, the it is safe to call it the power of 2 (^2).
+since it deals with the multiplication of 2, the it is safe to call it the power of 2 (<sup>2</sup>).
 
 therefore;
 
 ```js
 2^k = n
-thus; k = log base2 n
+thus; k = log <sub>2</sub> n
 ```
 
-in this case, rather than the the unit of time to be "n + 1", it becomes O(log base 2 n)
+in this case, rather than the the unit of time to be "n + 1", it becomes Olog<sub>2</sub>(n)
