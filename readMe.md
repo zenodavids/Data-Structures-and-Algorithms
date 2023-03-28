@@ -123,7 +123,7 @@ The **unit of time** is 1 and hence **_constant_** because no matter the variabl
 
 same goes o the **unit of space** - no matter the length of words, it still remains 1 (which is constant) and doesn't affect the space. hence O(1)
 
-## The Freuency count method
+## The Frequency count method
 
 ### Example 1 : sum up all the numbers in an array;
 
@@ -179,7 +179,7 @@ Get the variables used in the algorithm and check the space / they occupy. in th
 
 hence the space complexity is **s(n) = n + 3** hence, O(n)
 
-### Example 2 : Find the sum of two matrix of two numbers;
+### Example 2 : Find the sum of two matrix ;
 
 ```js
 Algorithm Add(A, B, n){
@@ -213,3 +213,113 @@ Hence, the time complexity is **f(n) = 2n^2 + 2n + 1** which is O(n^2)
 - n - 1
 
 Hence, the Space complexity is **s(n) = 3n^2 + 3** which is O(n^2)
+
+### Example 3 : Find the multiplication of two matrix ;
+
+```js
+Algorithm Multiply(A, B, n){
+  for(i = 0; i < n; i++){
+    for(j = 0; j < n; j++){
+      C[i,j] = 0;
+      for(k = 0; k < n; k++){
+        C[i, j] = C[i, j] + A[i, k] * B[k, j];
+      }
+    }
+  }
+}
+
+
+```
+
+this is a case of a _nested for loop, nesting another for loop_
+
+#### The Time complexity would be;
+
+- **for(i = 0; i < n; i++)** would be **n + 1** unit of time
+  > by default all for loops are n + 1 unit of time
+- **for(j = 0; j < n; j++)** would be **(n + 1)n** unit of time
+  > n + 1 by default, and the second n since it is in a far loop, hence its unit of time is dependent on the for loop nesting it
+- **C[i,j] = 0** is **n x n** unit of time
+  > since it is inside a nested for loop.
+- **for(k = 0; k < n; k++)** would be **(n + 1)n x n** unit of time
+- **C[i, j] = C[i, j] + A[i, k] \* B[k, j]** would be **n x n x n** unit of time
+
+Hence, the time complexity is **f(n) = 2n^3 + 3n^2 + 2n + 1** which is O(n^3)
+
+#### The Space complexity of the variables use in the algorithm would be;
+
+- A - n^2
+- B - n^2
+- C - n^2
+- i - 1
+- j - 1
+- k - 1
+- n - 1
+
+Hence, the Space complexity is **s(n) = 3n^2 + 4** which is O(n^2)
+
+# Time Complexity
+
+Let's try to understand time complexity a little deeper using the case scenarios below;
+
+### Scenario 1:
+
+say we have a simple **for loop**
+
+As we dive deeper into complexities in algorithm, we don't actually need the for loop unit time, but the unit time of the code the for loop actually iterates.
+
+```js
+for (i = 0; i < 0; i++) {
+  code // n unit of time = O(n)
+}
+
+/* or */
+
+for (i = n; i > 0; i--) {
+  code // n unit of time = O(n)
+}
+
+/* or */
+
+for (i = 1; i < n; i = i + 2) {
+  code // n/2 unit of time = O(n)
+}
+
+/* or */
+
+for (i = 1; i < n; i = i + 20) {
+  code // n/20 unit of time = O(n)
+}
+```
+
+Looking at the scenario above, our major concern is actually the for loop's code block, which is **n**, hence the time function is **f(n) = n. which is O(n)**
+
+### Scenario 2:
+
+Here, we have a _Nested_ **for loop**
+
+like we said in the above scenario, we dont bother with the for loop itself but the code it iterates
+
+```js
+for (i = 0; i < n; i++) {
+  for (j = 0; j < n; j++) {
+    code // n * n unit of time n * n = O(n^2)
+  }
+}
+```
+
+For the scenario above, the code been iterated by the for loops are the reason for the n x n (two for loops). hence the time function is **f(n^2) = n. which is O(n^2)**
+
+### Scenario 3:
+
+Here, we have a _Nested_ **for loop**
+
+like we said in the above scenario, we dont bother with the for loop itself but the code it iterates
+
+```js
+for (i = 0; i < n; i++) {
+  for (j = 0; j < i; j++) {
+    code // n * n unit of time n * n = O(n^2)
+  }
+}
+```
