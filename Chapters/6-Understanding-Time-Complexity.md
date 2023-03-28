@@ -81,7 +81,7 @@ for (i = 1; p < = n; i++) {
 
 Here, the default for loop unit of time (n + 1) doesn't work here because the condition in the loop states that as long as p is less than or equals n (p < = n), not i. The loop stops once "p" is greater than "n". Since the loop stops in "k"(when p is greater than n), then we assume ;
 **p = k(k + 1)/2**. which means the loop stops when **k(k + 1)/2 > n**.
-time unit is **k x k / 2** simplified to k^2 >n. hence "k > root of n ". which is still called **O(root of n)**
+time unit is **k x k / 2** simplified to k^2 >n. hence "k >$\sqrt{n}$ ". which is still called **O($\sqrt{n}$)**
 
 > Any For loop that's "**i++**" has the **n + 1**,
 
@@ -146,7 +146,7 @@ hence the log in this case is called the float value.
 
 ```js
 for (i = n; i >= 1; i = i / 2) {
-  code // this unit of time is log n
+  code
 }
 ```
 
@@ -159,3 +159,17 @@ n/2<sup>k</sup> < 1;\
 making n/2<sup>k</sup> = 1\
 n = 2<sup>k</sup>\
 k = log<sub>2</sub>n\
+hence, the time complexity is O(log<sub>2</sub>n)
+
+### Scenario 7
+
+```js
+for (i = 0; i * i < n; i = i++) {
+  code
+}
+```
+
+Pretty straight forward.
+i keeps incrementing as long as **i** _ **i** < **n** and stops when **i** _ **i** >= **n**.\
+hence, i<sup>2</sup> = n\
+i = $\sqrt{n}$
