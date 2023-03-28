@@ -153,9 +153,9 @@ for (i = n; i >= 1; i = i / 2) {
 in this case, **i is initialized to n**, the loop keeps going on as long as **i is greater than or equals 1** and stops when **i is less than 1**.ie;
 **starting from i/n**, loops to **n/2**, **n/2<sup>2</sup>**, **n/2**<sup>3</sup>... **n/2**<sup>k</sup> (assume **k** is the figure that is makes **i less than 1**.)
 
-Assume i is less than 1,
-therefore;
-n/2<sup>k</sup> < 1;
-making n/2<sup>k</sup> = 1
-n = 2<sup>k</sup>
-k = log<sub>2</sub>n
+Assume i is less than 1,\
+therefore;\
+n/2<sup>k</sup> < 1;\
+making n/2<sup>k</sup> = 1\
+n = 2<sup>k</sup>\
+k = log<sub>2</sub>n\
