@@ -74,7 +74,7 @@ this one is a bit tricky;
 p = 0;
 
 for (i = 1; p < = n; i++) {
-    p = p + i // O()
+    p = p + i // O(n base2)
 
 }
 ```
@@ -108,7 +108,54 @@ therefore;
 
 ```js
 2^k = n
-thus; k = log <sub>2</sub> n
+thus; k = log base2 n
 ```
 
 in this case, rather than the the unit of time to be "n + 1", it becomes Olog<sub>2</sub>(n)
+
+**Using the for loop in scenario 5;**
+lets assume n is 8 in the first use case, and n is 10 in another use case
+
+```js
+for (i = 1; i < n; i = i * 2) {
+  code // this unit of time is log n
+}
+```
+
+|  **n = 8, i is;**   |  **n = 10, i is;**   | **i x 2** |
+| :-----------------: | :------------------: | :-------: |
+|          1          |          1           |     2     |
+|          2          |          2           |     4     |
+|          4          |          4           |     8     |
+| 8 (stops iterating) |          8           |    16     |
+|                     | 16 (stops iterating) |    32     |
+|                     |                      |           |
+
+**from the table above, assume n = 8;**
+log 8 = 3 (means it iterated three times)
+therefore;
+log<sub>2</sub>2 = 3log<sub>2</sub>2 becomes 3
+
+**from the table above, assume n = 10;**
+log 10 = 3.2 (3.2 because it iterated at 16, not 10)
+therefore;
+log<sub>2</sub> 10 = 3.2
+hence the log in this case is called the float value.
+
+### Scenario 6
+
+```js
+for (i = n; i >= 1; i = i / 2) {
+  code // this unit of time is log n
+}
+```
+
+in this case, **i is initialized to n**, the loop keeps going on as long as **i is greater than or equals 1** and stops when **i is less than 1**.ie;
+**starting from i/n**, loops to **n/2**, **n/2<sup>2</sup>**, **n/2**<sup>3</sup>... **n/2**<sup>k</sup> (assume **k** is the figure that is makes **i less than 1**.)
+
+Assume i is less than 1,
+therefore;
+n/2<sup>k</sup> < 1;
+making n/2<sup>k</sup> = 1
+n = 2<sup>k</sup>
+k = log<sub>2</sub>n
