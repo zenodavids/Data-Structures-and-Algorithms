@@ -4,9 +4,9 @@
 
 This type of Time function is used when the output is certain.
 
-> f(n) = 2
-> f(n) = 5
-> f(n) = 5000
+> f(n) = 2\
+> f(n) = 5\
+> f(n) = 5000\
 > From the above, it doesn't matter the output, as long as the input doesn't affect the output
 
 ## O(logn) - Logarithmic :
