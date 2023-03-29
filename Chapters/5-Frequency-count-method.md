@@ -76,18 +76,18 @@ this is a case of a _nested for loop_
 - **C[i][j] = A[i][j] + B[i][j]** is n x n unit of time.
   > this is so because it is inside a loop so it n unit of time is dependent of the loop. and the second n because it is housed in the child loop.
 
-Hence, the time complexity is **f(n) = 2n^2 + 2n + 1** which is O(n^2)
+Hence, the time complexity is **f(n) = 2n<sup>2</sup> + 2n + 1** which is O(n<sup>2</sup>)
 
 ### The Space complexity of the variables use in the algorithm would be;
 
-- A - n^2
-- B - n^2
-- C - n^2
+- A - n<sup>2</sup>
+- B - n<sup>2</sup>
+- C - n<sup>2</sup>
 - i - 1
 - j - 1
 - n - 1
 
-Hence, the Space complexity is **s(n) = 3n^2 + 3** which is O(n^2)
+Hence, the Space complexity is **s(n) = 3n<sup>2</sup> + 3** which is O(n<sup>2</sup>)
 
 ## Example 3 : Find the multiplication of two matrix ;
 
@@ -119,16 +119,16 @@ this is a case of a _nested for loop, nesting another for loop_
 - **for(k = 0; k < n; k++)** would be **(n + 1)n x n** unit of time
 - **C[i, j] = C[i, j] + A[i, k] \* B[k, j]** would be **n x n x n** unit of time
 
-Hence, the time complexity is **f(n) = 2n^3 + 3n^2 + 2n + 1** which is O(n^3)
+Hence, the time complexity is **f(n) = 2n^3 + 3n<sup>2</sup> + 2n + 1** which is O(n^3)
 
 ### The Space complexity of the variables use in the algorithm would be;
 
-- A - n^2
-- B - n^2
-- C - n^2
+- A - n<sup>2</sup>
+- B - n<sup>2</sup>
+- C - n<sup>2</sup>
 - i - 1
 - j - 1
 - k - 1
 - n - 1
 
-Hence, the Space complexity is **s(n) = 3n^2 + 4** which is O(n^2)
+Hence, the Space complexity is **s(n) = 3n<sup>2</sup> + 4** which is O(n<sup>2</sup>)
